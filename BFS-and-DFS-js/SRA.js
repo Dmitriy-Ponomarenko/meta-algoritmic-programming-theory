@@ -192,14 +192,115 @@ const graph2 = {
   AY: [],
 };
 
+const graphBig = {
+  A: ["B", "A1", "A2", "A3"],
+  B: ["C", "B1", "B2"],
+  C: ["D", "C1", "C2"],
+  D: ["E", "D1"],
+  E: ["F", "E1", "E2"],
+  F: ["G"],
+  G: ["H", "G1"],
+  H: ["I"],
+  I: ["J", "I1", "I2"],
+  J: ["K"],
+  K: ["L", "K1"],
+  L: ["M"],
+  M: ["N", "M1", "M2"],
+  N: ["O"],
+  O: ["P"],
+  P: ["Q", "P1"],
+  Q: ["R"],
+  R: ["S"],
+  S: ["T", "S1", "S2"],
+  T: ["U"],
+  U: ["V"],
+  V: ["W"],
+  W: ["X", "W1"],
+  X: ["Y"],
+  Y: ["Z"],
+  Z: ["AA"],
+  AA: ["AB"],
+  AB: ["AC"],
+  AC: ["AD"],
+  AD: ["AE"],
+  AE: ["AF"],
+  AF: ["AG"],
+  AG: ["AH"],
+  AH: ["AI"],
+  AI: ["AJ"],
+  AJ: ["AK"],
+  AK: ["AL"],
+  AL: ["AM"],
+  AM: ["AN"],
+  AN: ["AO"],
+  AO: ["AP"],
+  AP: ["AQ"],
+  AQ: ["AR"],
+  AR: ["AS"],
+  AS: ["AT"],
+  AT: ["AU"],
+  AU: ["AV"],
+  AV: ["AW"],
+  AW: ["AX"],
+  AX: ["AY"],
+  AY: ["AZ"],
+  AZ: ["BA"],
+  BA: ["BB"],
+  BB: ["BC"],
+  BC: ["BD"],
+  BD: ["BE"],
+  BE: ["BF"],
+  BF: ["BG"],
+  BG: ["BH"],
+  BH: ["BI"],
+  BI: ["BJ"],
+  BJ: ["BK"],
+  BK: ["BL"],
+  BL: ["BM"],
+  BM: ["BN"],
+  BN: ["BO"],
+  BO: ["BP"],
+  BP: ["BQ"],
+  BQ: ["BR"],
+  BR: ["BS"],
+  BS: ["BT"],
+  BT: ["BU"],
+  BU: ["BV"],
+  BV: ["BW"],
+  BW: ["BX"],
+  BX: ["BY"],
+  BY: ["BZ"],
+  BZ: ["CA"],
+  A1: [],
+  A2: [],
+  A3: [],
+  B1: [],
+  B2: [],
+  C1: [],
+  C2: [],
+  D1: [],
+  E1: [],
+  E2: [],
+  G1: [],
+  I1: [],
+  I2: [],
+  K1: [],
+  M1: [],
+  M2: [],
+  P1: [],
+  S1: [],
+  S2: [],
+  W1: [],
+};
+
 // TESTING
 const startNode = "A";
-const goalNode = "F";
+const goalNode = "CA";
 
 console.log("=== TEST START ===");
 
 // DFS
-const dfs = new DFS(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+const dfs = new DFS(graphBig, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
 console.time("DFS Time");
 const dfsPath = (() => {
   let result;
@@ -212,7 +313,7 @@ console.log("DFS Metrics:", dfs.getMetrics());
 console.log("-------------------");
 
 // BFS
-const bfs = new BFS(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+const bfs = new BFS(graphBig, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
 console.time("BFS Time");
 const bfsPath = (() => {
   let result;
@@ -225,7 +326,7 @@ console.log("BFS Metrics:", bfs.getMetrics());
 console.log("-------------------");
 
 // SRA
-const sra = new SelfReflectiveSearch(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+const sra = new SelfReflectiveSearch(graphBig, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
 console.time("SRA Time");
 const sraPath = sra.search();
 console.timeEnd("SRA Time");
