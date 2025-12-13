@@ -37,16 +37,16 @@ SRA introduces **meta-algorithmic programming**, where the algorithm adapts itse
 
 ## Project Structure
 
-BFS-and-DFS-js/
-├── SRA.js
+BFS-and-DFS-js/ </br>
+├── SRA.js </br>
 ├── README.md
 
-BFS-and-DFS-ts/
-├── SRA.ts
+BFS-and-DFS-ts/ </br>
+├── SRA.ts </br>
 ├── README.md
 
-BFS-and-DFS-py/
-├── SRA.py
+BFS-and-DFS-py/ </br>
+├── SRA.py </br>
 ├── README.md
 
 - `SRA.js / SRA.ts / SRA.py`: main implementations of Self-Reflective Algorithm.
