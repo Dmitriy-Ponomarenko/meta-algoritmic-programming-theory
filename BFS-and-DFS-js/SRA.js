@@ -116,3 +116,119 @@ class SelfReflectiveSearch {
     };
   }
 }
+
+// DATA TO BE ANALIZED
+const graph1 = {
+  A: ["B", "C", "D"],
+  B: ["E", "F"],
+  C: ["G", "H"],
+  D: ["I", "J"],
+  E: ["K"],
+  F: ["L", "M"],
+  G: [],
+  H: ["N"],
+  I: [],
+  J: ["O", "P"],
+  K: [],
+  L: [],
+  M: ["Q"],
+  N: [],
+  O: [],
+  P: [],
+  Q: [],
+};
+
+const graph2 = {
+  A: ["B", "C", "D", "E", "F", "G"],
+  B: ["H", "I", "J"],
+  C: ["K", "L", "M"],
+  D: ["N", "O"],
+  E: ["P", "Q", "R"],
+  F: ["S", "T"],
+  G: ["U", "V", "W"],
+  H: ["X", "Y"],
+  I: ["Z", "AA"],
+  J: ["AB", "AC"],
+  K: ["AD", "AE"],
+  L: ["AF"],
+  M: ["AG", "AH"],
+  N: ["AI"],
+  O: ["AJ", "AK"],
+  P: ["AL", "AM", "AN"],
+  Q: ["AO"],
+  R: ["AP", "AQ"],
+  S: ["AR"],
+  T: ["AS", "AT"],
+  U: ["AU"],
+  V: ["AV", "AW"],
+  W: ["AX", "AY"],
+  X: [],
+  Y: [],
+  Z: [],
+  AA: [],
+  AB: [],
+  AC: [],
+  AD: [],
+  AE: [],
+  AF: [],
+  AG: [],
+  AH: [],
+  AI: [],
+  AJ: [],
+  AK: [],
+  AL: [],
+  AM: [],
+  AN: [],
+  AO: [],
+  AP: [],
+  AQ: [],
+  AR: [],
+  AS: [],
+  AT: [],
+  AU: [],
+  AV: [],
+  AW: [],
+  AX: [],
+  AY: [],
+};
+
+// TESTING
+const startNode = "A";
+const goalNode = "F";
+
+console.log("=== TEST START ===");
+
+// DFS
+const dfs = new DFS(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+console.time("DFS Time");
+const dfsPath = (() => {
+  let result;
+  while (!(result = dfs.step())) {}
+  return result;
+})();
+console.timeEnd("DFS Time");
+console.log("DFS Path:", dfsPath);
+console.log("DFS Metrics:", dfs.getMetrics());
+console.log("-------------------");
+
+// BFS
+const bfs = new BFS(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+console.time("BFS Time");
+const bfsPath = (() => {
+  let result;
+  while (!(result = bfs.step())) {}
+  return result;
+})();
+console.timeEnd("BFS Time");
+console.log("BFS Path:", bfsPath);
+console.log("BFS Metrics:", bfs.getMetrics());
+console.log("-------------------");
+
+// SRA
+const sra = new SelfReflectiveSearch(graph2, startNode, goalNode); // PUT YOUR GRAPH NANE HERE
+console.time("SRA Time");
+const sraPath = sra.search();
+console.timeEnd("SRA Time");
+console.log("SRA Path:", sraPath);
+console.log("SRA Metrics:", sra.getMetrics());
+console.log("=== TEST END ===");
