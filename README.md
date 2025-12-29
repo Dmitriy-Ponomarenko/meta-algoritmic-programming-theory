@@ -13,7 +13,7 @@ SRA addresses these limitations by **self-reflection**:
 - Dynamically switches between DFS and BFS when thresholds are exceeded.
 - Ensures a balance between execution time and memory usage.
 
-This makes SRA suitable for heterogeneous graph structures, including sparse, dense, linear, and tree-like graphs.
+This makes SRA suitable for graphs with different structures, including sparse, dense, linear, and tree-like graphs.
 
 ## Motivation
 
@@ -25,7 +25,7 @@ Many applications rely on graph traversal, such as:
 - Pathfinding in games and simulations
 
 Choosing the optimal traversal strategy beforehand is often impossible.  
-SRA introduces **meta-algorithmic programming**, where the algorithm adapts itself dynamically to the problem.
+SRA introduces **meta-algorithmic programming**, where the algorithm dynamically adapts to the problem, and is the first study to explore this new programming approach.
 
 ## Features
 
@@ -47,7 +47,12 @@ BFS-and-DFS-ts/ </br>
 
 BFS-and-DFS-py/ </br>
 ├── SRA.py </br>
-├── README.md
+├── README.md</br>
+
+.gitignore </br>
+LICENSE</br>
+package.json</br>
+tsconfig.json</br>
 
 - `SRA.js / SRA.ts / SRA.py`: main implementations of Self-Reflective Algorithm.
 - `README.md`: documentation and usage guide.
