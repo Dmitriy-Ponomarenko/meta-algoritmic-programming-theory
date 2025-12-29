@@ -57,20 +57,24 @@ BFS-and-DFS-py/ </br>
 **JavaScript**
 
 ```bash
+cd BFS-and-DFS-js
 node SRA.js
 ```
 
 **TypeScript**
 
 ```bash
-tsc SRA.ts
-node SRA.js
+npm i
+cd BFS-and-DFS-ts
+npx ts-node SRA.ts
 ```
 
 **Python**
 
 ```bash
-python3 SRA.py
+ctrl + shift + p
+Python: Select Interpreter
+Run or debug button in vscode
 ```
 
 ## Examples
